@@ -32,3 +32,9 @@ cursor: pointer
 #main-post{
   max-width: 540px;
 }
+main{
+  max-width: 900px;
+  margin: auto;
+  background: olive;
+  padding: 20px;
+}
