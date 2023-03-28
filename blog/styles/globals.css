@@ -28,3 +28,7 @@ cursor: pointer
   border: none;
   outline: none;
 }
+
+#main-post{
+  max-width: 540px;
+}

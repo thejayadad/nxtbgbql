@@ -21,8 +21,14 @@ export default function Home({posts}) {
        <PostCard post={post} key={post.title} />
     )
     }
-    <PostWidget />
-    <Categories />
+    <div className='row'>
+    <div className='col-8'>
+      <PostWidget />
+    </div>
+    <div className='col-4'>
+      <Categories />
+    </div>
+    </div>
     </>
   )
 }

@@ -2,7 +2,9 @@ import React from 'react'
 
 const PostWidget = () => {
   return (
-    <div>PostWidget</div>
+    <div
+    className='col-8'
+    >PostWidget</div>
   )
 }
 
