@@ -1,20 +1,12 @@
 import Head from 'next/head'
 
-import Categories from '../components/Categories'
-import PostCard from '../components/PostCard'
-import PostWidget from '../components/PostWidget'
-import Navbar from '../components/Navbar'
+import Categories from './components/Categories'
+import PostCard from './components/PostCard'
+import PostWidget from './components/PostWidget'
+import {getPosts} from "../services/index"
 
-const posts = [
-  {
-    title: "Learning Java Script ", excerpt: "LEarning Java by practing daily"
-  },
-  {
-    title: "Learning Java Script ", excerpt: "LEarning Java by practing daily"
-  }
-]
 
-export default function Home() {
+export default function Home({posts}) {
   return (
     <>
       <Head>
@@ -23,7 +15,6 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-    <Navbar />
 
     {
       posts.map((post) =>
@@ -34,4 +25,12 @@ export default function Home() {
     <Categories />
     </>
   )
+}
+
+
+export async function getStaticProps() {
+  const posts = (await getPosts()) || [];
+  return {
+    props: { posts },
+  };
 }
